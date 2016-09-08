@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html ng-app="Starships" lang="en">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles.css">
 	<title>Promises</title>
 </head>
-<body ng-controller="homeCtrl">
+<body>
 
 <main class="wrapper">
 	<div class="characters">
-		<button ng-click="getNextPage()" class="btn btn-primary">Next Page</button>
+		<button class="btn btn-primary">Next Page</button>
 		<ul class="character-list">
-			<li ng-repeat="character in characters">
+			<li>
 				<div class="character">
-					<h3>{{ character.name || "Luke Skywalker" }}</h3>
-					<p>Gender: {{ character.gender || "Male" }}</p>
-					<p>Hair Color: {{ character.hair_color || "Blond" }}</p>
-					<p>Eye Color: {{ character.eye_color || "Blue" }}</p>
-					<button ng-click="getCharacterStarships( character.starships )" class="btn btn-primary">Get {{ character.starships.length }} starships.</button>
+					<h3>Luke Skywalker</h3>
+					<p>Gender: Male</p>
+					<p>Hair Color: Blond</p>
+					<p>Eye Color: Blue</p>
+					<button class="btn btn-primary">Get 2 starships.</button>
 				</div>
 				<hr />
 			</li>
@@ -27,11 +27,11 @@
 
 	<div class="starships">
 		<ul class="ship-list">
-			<li ng-repeat="ship in starships">
+			<li>
 				<div class="ship">
-					<h3>Name: {{ ship.name }}</h3>
-					<h4>Manufacturer: {{ ship.manufacturer }}</h4>
-					<p>Cost: {{ ship.cost_in_credits }}</p>
+					<h3>Name: X-Wing</h3>
+					<h4>Manufacturer: Incom Corporation</h4>
+					<p>Cost: 149999</p>
 				</div>
 			</li>
 		</ul>
