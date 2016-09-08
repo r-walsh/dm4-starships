@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="Starships" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<title>Promises</title>
+</head>
+<body ng-controller="homeCtrl">
+
+<main class="wrapper">
+	<div class="characters">
+		<button ng-click="getNextPage()" class="btn btn-primary">Next Page</button>
+		<ul class="character-list">
+			<li ng-repeat="character in characters">
+				<div class="character">
+					<h3>{{ character.name || "Luke Skywalker" }}</h3>
+					<p>Gender: {{ character.gender || "Male" }}</p>
+					<p>Hair Color: {{ character.hair_color || "Blond" }}</p>
+					<p>Eye Color: {{ character.eye_color || "Blue" }}</p>
+					<button ng-click="getCharacterStarships( character.starships )" class="btn btn-primary">Get {{ character.starships.length }} starships.</button>
+				</div>
+				<hr />
+			</li>
+		</ul>
+	</div>
+
+	<div class="starships">
+		<ul class="ship-list">
+			<li ng-repeat="ship in starships">
+				<div class="ship">
+					<h3>Name: {{ ship.name }}</h3>
+					<h4>Manufacturer: {{ ship.manufacturer }}</h4>
+					<p>Cost: {{ ship.cost_in_credits }}</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="src/app.js"></script>
+<script src="src/homeCtrl.js"></script>
+<script src="src/starshipService.js"></script>
+</body>
+</html>
